@@ -9,6 +9,7 @@ function App() {
         <p>React</p>
       </div>
       <Todo />
+  
     </div>
   );
 }
