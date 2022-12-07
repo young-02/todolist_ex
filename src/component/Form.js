@@ -4,6 +4,8 @@ import Working from './Working';
 export default function Form() {
   const [title, setTitle] = useState('');
   const [text, setText] = useState('');
+  const [inputTitle, setInpuTitle] = useState('');
+  const [inputText, setInpuText] = useState('');
 
   function onChangeTitle(e) {
     setTitle(e.target.value);
@@ -11,7 +13,10 @@ export default function Form() {
   function onChangeText(e) {
     setText(e.target.value);
   }
-
+  function addList() {
+    setInpuTitle([...title]);
+    setInpuText([...text]);
+  }
   return (
     <>
       <div className="form_warpper">
@@ -25,9 +30,12 @@ export default function Form() {
             <input type="text" onChange={onChangeText} />
           </div>
         </div>
-        <button className="btn_add">추가하기</button>
+        <button className="btn_add" onClick={addList}>
+          추가하기
+        </button>
       </div>
-      <Working text={text} title={title} />
+
+      <Working text={inputTitle} title={inputText} />
     </>
   );
 }
