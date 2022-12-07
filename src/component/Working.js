@@ -5,7 +5,7 @@ export default function Working({ text, title }) {
     <div className="working_wrapper">
       <h2>Working...</h2>
       <ul className="work_list">
-        <li>
+        <li className={text ? 'list_active' : 'list'}>
           <h3>{title}</h3>
           <p>{text}</p>
           <div className="btn_wrap">

@@ -82,3 +82,10 @@ li {
   border-radius: 4px;
   cursor: pointer;
 }
+
+.list {
+  display: none;
+}
+.list_active {
+  display: block;
+}
