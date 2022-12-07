@@ -35,7 +35,7 @@ export default function Form() {
         </button>
       </div>
 
-      <Working text={inputTitle} title={inputText} />
+      <Working text={inputText} title={inputTitle} />
     </>
   );
 }
