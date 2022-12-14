@@ -1,0 +1,29 @@
+import React from 'react';
+import styled from 'styled-components';
+
+function Header({ children }) {
+  return (
+    <Title>
+      <h1>{children}</h1>
+      <p>React</p>
+    </Title>
+  );
+}
+export default Header;
+
+const Title = styled.header`
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.6em 0 3em;
+
+  h1 {
+    font-size: 1.6em;
+    font-weight: 800;
+  }
+  p {
+    font-size: 1em;
+    font-weight: 800;
+  }
+`;
