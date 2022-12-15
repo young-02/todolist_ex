@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import styled from 'styled-components';
 import { useDispatch } from 'react-redux';
 import Button from '../BTN/Button';
+import { todoAdd } from '../../redux/modules/todos';
 
 function InputForm() {
   const [title, setTitle] = useState('');
@@ -29,7 +30,7 @@ function InputForm() {
       return;
     }
 
-    dispatch({ type: 'TODO_ADD', payload: { title, content } });
+    dispatch(todoAdd({ title, content }));
     setTitle('');
     setContent('');
   };

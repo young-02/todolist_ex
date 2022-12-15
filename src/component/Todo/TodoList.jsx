@@ -2,11 +2,13 @@ import React from 'react';
 import styled from 'styled-components';
 import Todo from './Todo';
 import { useSelector, useDispatch } from 'react-redux';
+// import { useParams } from 'react-router-dom';
 
 function TodoList({ isActive }) {
   const todosList = useSelector((state) => state.todos.items);
   const dispatch = useDispatch();
-  console.log('todosList', todosList);
+  // const param = useParams();
+
   return (
     <>
       <TodoContainer>
@@ -22,6 +24,7 @@ function TodoList({ isActive }) {
                   isActive={isActive}
                   id={item.id}
                   dispatch={dispatch}
+                  // param={param}
                 />
               );
             })}

@@ -1,18 +1,21 @@
 import React from 'react';
-import Button from '../component/BTN/Button';
+import Button from '../BTN/Button';
+import { todoSWITCH, todoDelete } from '../../redux/modules/todos';
+import { Link } from 'react-router-dom';
 
-function Todo({ item, isActive, dispatch, id }) {
+function Todo({ item, isActive, dispatch }) {
   const completeOnclickHandler = () => {
-    dispatch({ type: 'TODO_SWITCH', payload: { id } });
+    dispatch(todoSWITCH(item));
   };
   const cancelOnclickHandler = () => {
-    dispatch({ type: 'TODO_DELETE', payload: { id } });
+    dispatch(todoDelete(item));
   };
 
   return (
-    // {id}
     <div key={item.id}>
-      <h3>{item.title}</h3>
+      <h3>
+        <Link to={`todoDetail/${item.id}`}>{item.title}</Link>
+      </h3>
       <p>{item.content}</p>
       <div className="btn_wrap">
         <Button

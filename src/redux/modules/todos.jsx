@@ -46,9 +46,7 @@ const initailState = {
   ],
 };
 
-//ㄱㄷ
 const todos = (state = initailState, action) => {
-  console.log(state.items.id);
   switch (action.type) {
     case TODO_ADD:
       const newDodos = {

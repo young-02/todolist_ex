@@ -1,10 +1,13 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 function Header({ children }) {
   return (
     <Title>
-      <h1>{children}</h1>
+      <h1>
+        <Link to="/">{children}</Link>
+      </h1>
       <p>React</p>
     </Title>
   );
