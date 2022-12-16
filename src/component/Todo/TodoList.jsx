@@ -53,7 +53,7 @@ const List = styled.div`
 
   > div {
     /* border: 2px solid #fff; */
-    background-color: #ffec9a;
+    background-color: #d5ffcaed;
     padding: 2em;
     border-radius: 8px;
     color: #051a42;
