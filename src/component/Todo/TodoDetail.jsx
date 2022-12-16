@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import { useSelector } from 'react-redux';
 import { useParams, Link } from 'react-router-dom';
+import { Reset } from 'styled-reset';
 
 const TodoDetail = ({ item }) => {
   const param = useParams();
@@ -10,21 +11,26 @@ const TodoDetail = ({ item }) => {
   // console.log(todo);
 
   return (
-    <TodoDetailWrap>
-      {todo
-        .filter((item) => item.id === param.id)
-        .map((t) => {
-          return (
-            <div key={t.id}>
-              <h3>{t.title}</h3>
-              <p>{t.content}</p>
-              <div className="before_btn">
-                <Link to="/">이전으로</Link>
+    <>
+      <Reset />
+      <TodoDetailWrap>
+        {todo
+          .filter((item) => item.id === param.id)
+          .map((t) => {
+            return (
+              <div key={t.id}>
+                <div className="text_box">
+                  <h3>{t.title}</h3>
+                  <p>{t.content}</p>
+                </div>
+                <div className="before_btn">
+                  <Link to="/">👈 이전으로</Link>
+                </div>
               </div>
-            </div>
-          );
-        })}
-    </TodoDetailWrap>
+            );
+          })}
+      </TodoDetailWrap>
+    </>
   );
 };
 
@@ -37,19 +43,33 @@ const TodoDetailWrap = styled.div`
   height: 100vh;
 
   > div {
-    width: 300px;
-    /* height: 150px; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 460px;
+    height: 200px;
     padding: 2em;
     background-color: #fff;
+    border: 4px solid #af1004;
     border-radius: 16px;
     color: black;
 
-    > p {
-      padding: 1em 0;
+    > .text_box {
+      > h3 {
+        font-size: 1.6em;
+        font-weight: 900;
+        color: #346649;
+      }
+
+      > p {
+        padding: 1.5em 0;
+      }
     }
+
     .before_btn {
       display: flex;
       justify-content: flex-end;
+
       > a {
         color: #fff;
         border-radius: 4px;

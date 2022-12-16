@@ -12,7 +12,7 @@ function TodoList({ isActive }) {
   return (
     <>
       <TodoContainer>
-        <h3>{!isActive ? 'Working' : 'IsDone'}</h3>
+        <h3>{!isActive ? 'Working 🎄' : 'IsDone 🎁'}</h3>
         <List>
           {todosList
             .filter((item) => item.isDone === isActive)
@@ -52,17 +52,27 @@ const List = styled.div`
   margin-top: 1em;
 
   > div {
-    border: 2px solid #fff;
-    background-color: #f3edd8;
+    /* border: 2px solid #fff; */
+    background-color: #ffec9a;
     padding: 2em;
     border-radius: 8px;
-    color: #183527;
+    color: #051a42;
+    cursor: pointer;
 
+    :hover {
+      background-color: #ff9a9a;
+      transition: all 0.3s;
+    }
     > h3 {
       font-size: 1.5em;
+
+      > a {
+        display: block;
+        color: #346649;
+      }
     }
     > p {
-      margin: 1em 0;
+      padding: 1em 0;
     }
     .btn_wrap {
       display: flex;

@@ -21,11 +21,13 @@ function Todo({ item, isActive, dispatch }) {
         <Button
           value={!isActive ? '완료' : '취소'}
           backgroundColor="#346649"
+          fontColor="#fff"
           onClick={completeOnclickHandler}
         />
         <Button
           value="삭제"
           backgroundColor="#d62433"
+          fontColor="#fff"
           onClick={cancelOnclickHandler}
         />
       </div>

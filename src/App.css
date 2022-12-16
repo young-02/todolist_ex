@@ -6,8 +6,10 @@ body {
   max-width: 1200px;
   margin: 0 auto;
   width: 95%;
+  padding: 1em 0;
 }
 
 a {
   text-decoration: none;
+  color: #fff;
 }

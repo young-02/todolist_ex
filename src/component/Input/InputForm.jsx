@@ -39,14 +39,18 @@ function InputForm() {
     <>
       <InputContainer onSubmit={formOnsubmitHandler}>
         <InputBox>
-          <label>제목</label>
+          <label>제목 🥳</label>
           <input value={title} onChange={titleOnchangeHandler} />
         </InputBox>
         <InputBox>
-          <label>내용</label>
+          <label>내용 ✏️</label>
           <input value={content} onChange={contentOnchangeHandler} />
         </InputBox>
-        <Button value="추가하기" backgroundColor="#ffc642" />
+        <Button
+          value="추가하기"
+          backgroundColor="#ffc642"
+          fontColor="#167867"
+        />
       </InputContainer>
     </>
   );
@@ -66,11 +70,15 @@ const InputBox = styled.div`
   align-items: center;
   gap: 1em;
 
-  input {
+  > label {
+    font-size: 1.3em;
+    font-weight: 800;
+  }
+  > input {
     background-color: #fff;
     border: none;
     padding: 1em;
-    border-radius: 4px;
-    width: 180px;
+    border-radius: 2em;
+    width: 280px;
   }
 `;

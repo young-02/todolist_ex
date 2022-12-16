@@ -8,7 +8,7 @@ function Header({ children }) {
       <h1>
         <Link to="/">{children}</Link>
       </h1>
-      <p>React</p>
+      <p>TaeYoung 🤩</p>
     </Title>
   );
 }
@@ -24,9 +24,12 @@ const Title = styled.header`
   h1 {
     font-size: 1.6em;
     font-weight: 800;
+    > a {
+      color: #ffc542;
+    }
   }
   p {
-    font-size: 1em;
+    font-size: 1.3em;
     font-weight: 800;
   }
 `;

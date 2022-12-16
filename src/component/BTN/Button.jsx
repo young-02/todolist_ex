@@ -1,9 +1,13 @@
 import React from 'react';
 import styled from 'styled-components';
 
-function Button({ value, backgroundColor, onClick }) {
+function Button({ value, backgroundColor, onClick, fontColor }) {
   return (
-    <BTN backgroundColor={backgroundColor} onClick={onClick}>
+    <BTN
+      backgroundColor={backgroundColor}
+      fontColor={fontColor}
+      onClick={onClick}
+    >
       {value}
     </BTN>
   );
@@ -18,6 +22,6 @@ const BTN = styled.button`
   font-size: 1em;
   font-weight: 600;
   background-color: ${(props) => props.backgroundColor};
-  color: #fff;
+  color: ${(props) => props.fontColor};
   cursor: pointer;
 `;

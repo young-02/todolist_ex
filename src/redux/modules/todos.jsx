@@ -45,7 +45,7 @@ const initailState = {
     },
   ],
 };
-
+//리듀서
 const todos = (state = initailState, action) => {
   switch (action.type) {
     case TODO_ADD:
