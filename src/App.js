@@ -8,10 +8,10 @@ import TodoList from './component/Todo/TodoList';
 function App() {
   return (
     <div className="App">
+      {/* <Router /> */}
       <Reset />
       <Header>MyTodoList</Header>
       <main>
-        {/* <Router /> */}
         <InputForm />
         <TodoList isActive={false} />
         <TodoList isActive={true} />

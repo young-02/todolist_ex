@@ -7,28 +7,21 @@ import { Reset } from 'styled-reset';
 const TodoDetail = ({ item }) => {
   const param = useParams();
   const todo = useSelector((state) => state.todos.items);
-  console.log(item);
-  // console.log(todo);
-
+  const work = todo.find((t) => param.id === t.id);
+  
   return (
     <>
       <Reset />
       <TodoDetailWrap>
-        {todo
-          .filter((item) => item.id === param.id)
-          .map((t) => {
-            return (
-              <div key={t.id}>
-                <div className="text_box">
-                  <h3>{t.title}</h3>
-                  <p>{t.content}</p>
-                </div>
-                <div className="before_btn">
-                  <Link to="/">👈 이전으로</Link>
-                </div>
-              </div>
-            );
-          })}
+        <div>
+          <div className="text_box">
+            <h3>{work.title}</h3>
+            <p>{work.content}</p>
+          </div>
+          <div className="before_btn">
+            <Link to="/">👈 이전으로</Link>
+          </div>
+        </div>
       </TodoDetailWrap>
     </>
   );
